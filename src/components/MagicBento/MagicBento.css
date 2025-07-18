@@ -54,10 +54,12 @@
     width: 100%;
     max-width: 100%;
     aspect-ratio: 1.2 / 1;
+    min-height: 180px;
+    max-height: 340px;
     padding: 1em;
   }
   .card-span-2 {
-    grid-column: span 1;
+    grid-column: auto !important;
   }
   .card__title {
     font-size: 1.1rem;

@@ -61,7 +61,7 @@ class Noise {
 }
 
 const Waves = ({
-  lineColor = "black",
+  lineColor = "rgba(139, 0, 255, 0.5)",
   backgroundColor = "transparent",
   waveSpeedX = 0.0125,
   waveSpeedY = 0.005,
@@ -173,6 +173,7 @@ const Waves = ({
       ctx.clearRect(0, 0, width, height);
       ctx.beginPath();
       ctx.strokeStyle = configRef.current.lineColor;
+      ctx.lineWidth = 2.5;
       linesRef.current.forEach((points) => {
         let p1 = moved(points[0], false);
         ctx.moveTo(p1.x, p1.y);
