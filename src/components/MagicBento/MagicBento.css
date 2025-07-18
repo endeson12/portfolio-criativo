@@ -1,0 +1,68 @@
+.card-grid {
+    display: grid;
+    gap: 1em;
+    padding: 1em;
+    max-width: 1200px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+}
+.card {
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; aspect-ratio: 1 / 1;
+    padding: 1.5em; border-radius: 20px; border: 1px solid var(--border-color);
+    background: #10081c; overflow: hidden; transition: all 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); }
+.card__header, .card__content { display: flex; position: relative; color: var(--text-primary); text-align: left; z-index: 2;}
+.card__header { justify-content: space-between; }
+.card__content { flex-direction: column; justify-content: flex-end; height: 100%;}
+.card__label { font-size: 1rem; opacity: 0.7; }
+.card__title { font-weight: 700; font-size: 1.5rem; margin: 0 0 0.25em; }
+.card__description { font-size: 1rem; line-height: 1.4; opacity: 0.9; }
+
+    .card-span-2 { grid-column: span 2; }
+
+/* Tilted Card Container inside Bento */
+.bento-tilted-card {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+
+/* --- RESPONSIVIDADE MAGICBENTO --- */
+
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7em;
+    padding: 0.7em;
+  }
+  .card-span-2 {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+    padding: 0.5em;
+  }
+  .card {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1.2 / 1;
+    padding: 1em;
+  }
+  .card-span-2 {
+    grid-column: span 1;
+  }
+  .card__title {
+    font-size: 1.1rem;
+  }
+  .card__description {
+    font-size: 0.98rem;
+  }
+} 
