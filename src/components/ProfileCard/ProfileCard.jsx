@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useMemo, useState } from "react";
+import React, { useEffect, useRef, useCallback, useMemo } from "react";
 import "./ProfileCard.css";
 
 const DEFAULT_BEHIND_GRADIENT =
@@ -53,31 +53,26 @@ const ProfileCardComponent = ({
   const wrapRef = useRef(null);
   const cardRef = useRef(null);
 
-  // Detectar dispositivo de toque
-  const [isTouch, setIsTouch] = useState(false);
-  useEffect(() => {
-    const checkTouch = () => {
-      if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) {
-        setIsTouch(true);
-      } else {
-        setIsTouch(false);
-      }
-    };
-    checkTouch();
-    window.addEventListener('resize', checkTouch);
-    return () => window.removeEventListener('resize', checkTouch);
-  }, []);
-
   const animationHandlers = useMemo(() => {
     if (!enableTilt) return null;
+
     let rafId = null;
-    const updateCardTransform = (offsetX, offsetY, card, wrap) => {
+
+    const updateCardTransform = (
+      offsetX,
+      offsetY,
+      card,
+      wrap
+    ) => {
       const width = card.clientWidth;
       const height = card.clientHeight;
+
       const percentX = clamp((100 / width) * offsetX);
       const percentY = clamp((100 / height) * offsetY);
+
       const centerX = percentX - 50;
       const centerY = percentY - 50;
+
       const properties = {
         "--pointer-x": `${percentX}%`,
         "--pointer-y": `${percentY}%`,
@@ -89,27 +84,41 @@ const ProfileCardComponent = ({
         "--rotate-x": `${round(-(centerX / 5))}deg`,
         "--rotate-y": `${round(centerY / 4)}deg`,
       };
+
       Object.entries(properties).forEach(([property, value]) => {
         wrap.style.setProperty(property, value);
       });
     };
-    const createSmoothAnimation = (duration, startX, startY, card, wrap) => {
+
+    const createSmoothAnimation = (
+      duration,
+      startX,
+      startY,
+      card,
+      wrap
+    ) => {
       const startTime = performance.now();
       const targetX = wrap.clientWidth / 2;
       const targetY = wrap.clientHeight / 2;
+
       const animationLoop = (currentTime) => {
         const elapsed = currentTime - startTime;
         const progress = clamp(elapsed / duration);
         const easedProgress = easeInOutCubic(progress);
+
         const currentX = adjust(easedProgress, 0, 1, startX, targetX);
         const currentY = adjust(easedProgress, 0, 1, startY, targetY);
+
         updateCardTransform(currentX, currentY, card, wrap);
+
         if (progress < 1) {
           rafId = requestAnimationFrame(animationLoop);
         }
       };
+
       rafId = requestAnimationFrame(animationLoop);
     };
+
     return {
       updateCardTransform,
       createSmoothAnimation,
@@ -126,7 +135,9 @@ const ProfileCardComponent = ({
     (event) => {
       const card = cardRef.current;
       const wrap = wrapRef.current;
+
       if (!card || !wrap || !animationHandlers) return;
+
       const rect = card.getBoundingClientRect();
       animationHandlers.updateCardTransform(
         event.clientX - rect.left,
@@ -141,7 +152,9 @@ const ProfileCardComponent = ({
   const handlePointerEnter = useCallback(() => {
     const card = cardRef.current;
     const wrap = wrapRef.current;
+
     if (!card || !wrap || !animationHandlers) return;
+
     animationHandlers.cancelAnimation();
     wrap.classList.add("active");
     card.classList.add("active");
@@ -151,7 +164,9 @@ const ProfileCardComponent = ({
     (event) => {
       const card = cardRef.current;
       const wrap = wrapRef.current;
+
       if (!card || !wrap || !animationHandlers) return;
+
       animationHandlers.createSmoothAnimation(
         ANIMATION_CONFIG.SMOOTH_DURATION,
         event.offsetX,
@@ -167,17 +182,23 @@ const ProfileCardComponent = ({
 
   useEffect(() => {
     if (!enableTilt || !animationHandlers) return;
+
     const card = cardRef.current;
     const wrap = wrapRef.current;
+
     if (!card || !wrap) return;
+
     const pointerMoveHandler = handlePointerMove;
     const pointerEnterHandler = handlePointerEnter;
     const pointerLeaveHandler = handlePointerLeave;
+
     card.addEventListener("pointerenter", pointerEnterHandler);
     card.addEventListener("pointermove", pointerMoveHandler);
     card.addEventListener("pointerleave", pointerLeaveHandler);
+
     const initialX = wrap.clientWidth - ANIMATION_CONFIG.INITIAL_X_OFFSET;
     const initialY = ANIMATION_CONFIG.INITIAL_Y_OFFSET;
+
     animationHandlers.updateCardTransform(initialX, initialY, card, wrap);
     animationHandlers.createSmoothAnimation(
       ANIMATION_CONFIG.INITIAL_DURATION,
@@ -186,6 +207,7 @@ const ProfileCardComponent = ({
       card,
       wrap
     );
+
     return () => {
       card.removeEventListener("pointerenter", pointerEnterHandler);
       card.removeEventListener("pointermove", pointerMoveHandler);
@@ -224,65 +246,64 @@ const ProfileCardComponent = ({
       style={cardStyle}
     >
       <section ref={cardRef} className="pc-card">
-        {/* Avatar como fundo absoluto */}
-        <img
-          className="avatar-bg"
-          src={avatarUrl}
-          alt={name || "User"}
-          loading="lazy"
-          onError={e => { e.target.style.display = "none"; }}
-        />
-        {/* Texto sobreposto no topo */}
-        <div className="pc-details">
-          <h3>{name}</h3>
-          <p>{title}</p>
-        </div>
-        {/* Barra de informações sobreposta na base */}
-        {showUserInfo && (
-          <div className="pc-user-info">
-            <div className="pc-user-details">
-              <div className="pc-mini-avatar">
-                <img
-                  src={miniAvatarUrl || avatarUrl}
-                  alt={`${name || "User"} mini avatar`}
-                  loading="lazy"
-                  onError={e => { e.target.style.opacity = "0.5"; e.target.src = avatarUrl; }}
-                />
+        <div className="pc-inside">
+          <div className="pc-shine" />
+          <div className="pc-glare" />
+          <div className="pc-content pc-avatar-content">
+            <img
+              className="avatar"
+              src={avatarUrl}
+              alt={`${name || "User"} avatar`}
+              loading="lazy"
+              onError={(e) => {
+                const target = e.target;
+                target.style.display = "none";
+              }}
+            />
+            {showUserInfo && (
+              <div className="pc-user-info">
+                <div className="pc-user-details">
+                  <div className="pc-mini-avatar">
+                    <img
+                      src={miniAvatarUrl || avatarUrl}
+                      alt={`${name || "User"} mini avatar`}
+                      loading="lazy"
+                      onError={(e) => {
+                        const target = e.target;
+                        target.style.opacity = "0.5";
+                        target.src = avatarUrl;
+                      }}
+                    />
+                  </div>
+                  <div className="pc-user-text">
+                    <div className="pc-handle">@{handle}</div>
+                    <div className="pc-status">{status}</div>
+                  </div>
+                </div>
+                <button
+                  className="pc-contact-btn"
+                  onClick={handleContactClick}
+                  style={{ pointerEvents: "auto" }}
+                  type="button"
+                  aria-label={`Contact ${name || "user"}`}
+                >
+                  {contactText}
+                </button>
               </div>
-              <div className="pc-user-text">
-                <div className="pc-handle">@{handle}</div>
-                <div className="pc-status">{status}</div>
-              </div>
-            </div>
-            <button
-              className="pc-contact-btn"
-              onClick={handleContactClick}
-              style={{ pointerEvents: "auto" }}
-              type="button"
-              aria-label={`Contact ${name || "user"}`}
-            >
-              {contactText}
-            </button>
+            )}
           </div>
-        )}
+          <div className="pc-content">
+            <div className="pc-details">
+              <h3>{name}</h3>
+              <p>{title}</p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
 };
 
-// 1. Verifique se estamos em um dispositivo de toque (fora do componente)
-const isTouchDevice =
-  typeof window !== 'undefined' &&
-  ('ontouchstart' in window ||
-    (navigator && navigator.maxTouchPoints > 0) ||
-    (window.matchMedia && window.matchMedia('(pointer: coarse)').matches));
+const ProfileCard = React.memo(ProfileCardComponent);
 
-// 2. Crie um "wrapper" que decide se o tilt deve ser ativado
-const ProfileCardWrapper = (props) => {
-  // Desativa o tilt se a prop não for passada ou se for um dispositivo de toque
-  const enableTilt = props.hasOwnProperty('enableTilt') ? props.enableTilt : !isTouchDevice;
-  return <ProfileCardComponent {...props} enableTilt={enableTilt} />;
-};
-
-// 3. Exporte a versão memoizada do wrapper
-export default React.memo(ProfileCardWrapper); 
+export default ProfileCard; 
