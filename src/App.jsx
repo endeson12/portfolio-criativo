@@ -92,7 +92,6 @@ function App() {
                     <a href="https://linkedin.com/in/[seu-usuario]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     <a href="mailto:[seu-email@example.com]">Email</a>
                 </div>
-                <p>© 2025 [Seu Nome]. Todos os direitos reservados.</p>
             </footer>
         </React.Fragment>
     );

@@ -40,6 +40,7 @@ function createTextTexture(gl, text, font = "bold 30px monospace", color = "blac
   context.fillText(text, canvas.width / 2, canvas.height / 2);
   const texture = new Texture(gl, { generateMipmaps: false });
   texture.image = canvas;
+  texture.needsUpdate = true;
   return { texture, width: canvas.width, height: canvas.height };
 }
 
@@ -197,6 +198,7 @@ class Media {
     img.src = this.image;
     img.onload = () => {
       texture.image = img;
+      texture.needsUpdate = true;
       this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
     };
   }

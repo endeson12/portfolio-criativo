@@ -124,6 +124,14 @@ footer .social-links a:hover { color: var(--purple-primary); }
     vertical-align: bottom;
 } 
 
+/* Espaçamento extra e correção de corte para o texto rotativo do título principal */
+h1 .text-rotate span, h1 .text-rotate {
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  padding: 0.7em 0 1.1em 0;
+  display: inline-block;
+}
+
 /* --- RESPONSIVIDADE GLOBAL --- */
 
 @media (max-width: 1024px) {

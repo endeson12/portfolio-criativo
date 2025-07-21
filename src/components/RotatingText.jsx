@@ -18,7 +18,7 @@ const RotatingText = ({ texts, rotationInterval = 2000 }) => {
     if (!texts || texts.length === 0) return null;
 
     return (
-        <span style={{ display: 'inline-flex', verticalAlign: 'bottom', height: '1.2em', overflow: 'hidden' }}>
+        <span style={{ display: 'inline-flex', verticalAlign: 'bottom', height: '2.5em', minWidth: '100%', overflow: 'hidden', alignItems: 'flex-end', justifyContent: 'center' }}>
             <AnimatePresence mode="wait">
                 <motion.span
                     key={currentTextIndex}

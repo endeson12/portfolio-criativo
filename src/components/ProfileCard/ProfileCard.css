@@ -85,7 +85,7 @@
 .pc-avatar-content .avatar {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 58%; /* desce a imagem para não sobrepor o nome */
   width: 100%;
   height: auto;
   max-width: 90%;
@@ -93,12 +93,11 @@
   transform: translate(-50%, -50%);
   object-fit: cover;
   border-radius: 20px;
-  filter: grayscale(0%) contrast(1.2) brightness(1.1) saturate(1.5) drop-shadow(0 0 32px #00fff0) drop-shadow(0 0 32px #ff00e0);
-  mix-blend-mode: screen;
-  opacity: 0.92;
+  filter: grayscale(100%) contrast(1.2);
+  mix-blend-mode: luminosity;
+  opacity: 0.85;
   z-index: 3;
   pointer-events: none;
-  transition: filter 0.3s, opacity 0.3s;
 }
 
 .avatar-bg {
@@ -293,6 +292,7 @@
   align-items: center;
   justify-content: flex-start;
   pointer-events: none;
+  padding-top: 2.5em; /* aumenta o espaço acima da foto */
 }
 
 #about {
