@@ -88,9 +88,9 @@ function App() {
             </main>
             <footer>
                 <div className="social-links">
-                    <a href="https://github.com/[seu-usuario]" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/endeson12" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://linkedin.com/in/[seu-usuario]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="mailto:[seu-email@example.com]">Email</a>
+                    <a href="mailto:[endesonmarcell@gmail.com]">Email</a>
                 </div>
             </footer>
         </React.Fragment>
