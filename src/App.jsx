@@ -52,8 +52,8 @@ function App() {
                         miniAvatarUrl="/endeson-marcell.png" // Caminho corrigido
                         name="Endeson Marcell"
                         title="Desenvolvedor Criativo"
-                        handle="enderson.marcell"
-                        onContactClick={() => { window.location.href = 'mailto:seu-email@example.com'; }}
+                        handle="endeson.marcell"
+                        onContactClick={() => { window.location.href = 'mailto:endesonmarcell@gmail.com'; }}
                     />
                 </section>
 
