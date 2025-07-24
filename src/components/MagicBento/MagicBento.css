@@ -30,10 +30,6 @@
     z-index: 1;
 }
 
-.card.cursor-target {
-  /* Nenhum estilo extra é necessário aqui, a classe é apenas um marcador */
-}
-
 /* --- RESPONSIVIDADE MAGICBENTO --- */
 
 @media (max-width: 1024px) {

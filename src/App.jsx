@@ -8,7 +8,6 @@ import ScrollStack, { ScrollStackItem } from './components/ScrollStack/ScrollSta
 import CircularGallery from './components/CircularGallery/CircularGallery.jsx';
 import Waves from './components/Waves/Waves.jsx';
 import ProfileCard from './components/ProfileCard/ProfileCard.jsx';
-import TargetCursor from './components/TargetCursor/TargetCursor.jsx';
 
 function App() {
     const skills = ["React", "Next.js", "JavaScript", "TypeScript", "Framer Motion", "GSAP", "WebGL", "Node.js"];
@@ -35,7 +34,6 @@ function App() {
                 baseThickness={25}
                 maxAge={800}
             />
-            <TargetCursor targetSelector=".cursor-target" />
             <main>
                 <section className="hero-section">
                     <h1>
