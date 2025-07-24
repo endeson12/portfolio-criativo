@@ -8,17 +8,17 @@ import ScrollStack, { ScrollStackItem } from './components/ScrollStack/ScrollSta
 import CircularGallery from './components/CircularGallery/CircularGallery.jsx';
 import Waves from './components/Waves/Waves.jsx';
 import ProfileCard from './components/ProfileCard/ProfileCard.jsx';
-import SplashCursor from './components/SplashCursor.jsx';
+import TargetCursor from './components/TargetCursor/TargetCursor.jsx';
 
 function App() {
     const skills = ["React", "Next.js", "JavaScript", "TypeScript", "Framer Motion", "GSAP", "WebGL", "Node.js"];
 
     const galleryItems = [
-      { image: 'https://picsum.photos/seed/1/800/600?grayscale', text: "Projeto Um" },
-      { image: 'https://picsum.photos/seed/2/800/600?grayscale', text: "Projeto Dois" },
-      { image: 'https://picsum.photos/seed/3/800/600?grayscale', text: "Projeto Três" },
-      { image: 'https://picsum.photos/seed/4/800/600?grayscale', text: "Projeto Quatro" },
-      { image: 'https://picsum.photos/seed/5/800/600?grayscale', text: "Projeto Cinco" }
+      { image: '/AlunoUninassau.png', text: "Portal do Aluno/Uninassau" },
+      { image: '/Portifolio.png', text: "Projeto Portfolio" },
+      { image: '/FOTOPROJETOSOLAR.png', text: "Projeto SolAr" },
+      { image: '/Shild.png', text: "Projeto Shild" },
+      { image: '/MINER AI.png', text: "Projeto MINER AI" }
     ];
 
     return (
@@ -35,6 +35,7 @@ function App() {
                 baseThickness={25}
                 maxAge={800}
             />
+            <TargetCursor targetSelector=".cursor-target" />
             <main>
                 <section className="hero-section">
                     <h1>
@@ -90,7 +91,7 @@ function App() {
                 <div className="social-links">
                     <a href="https://github.com/endeson12" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://linkedin.com/in/[seu-usuario]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="mailto:[endesonmarcell@gmail.com]">Email</a>
+                    <a href="mailto:endesonmarcell@gmail.com">Email</a>
                 </div>
             </footer>
         </React.Fragment>
