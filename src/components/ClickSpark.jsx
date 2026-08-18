@@ -1,6 +1,6 @@
 import React, { useRef, useCallback } from 'react';
 
-const ClickSpark = ({ children, ...props }) => {
+const ClickSpark = ({ children }) => {
     const sparkRef = useRef(null);
 
     const handleClick = useCallback((e) => {

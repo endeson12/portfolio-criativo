@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 
 const RotatingText = ({ texts, rotationInterval = 2000 }) => {
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -20,7 +20,7 @@ const RotatingText = ({ texts, rotationInterval = 2000 }) => {
     return (
         <span style={{ display: 'inline-flex', verticalAlign: 'bottom', height: '2.5em', minWidth: '100%', overflow: 'hidden', alignItems: 'flex-end', justifyContent: 'center' }}>
             <AnimatePresence mode="wait">
-                <motion.span
+                <Motion.span
                     key={currentTextIndex}
                     initial={{ y: "100%" }}
                     animate={{ y: "0%" }}
@@ -29,7 +29,7 @@ const RotatingText = ({ texts, rotationInterval = 2000 }) => {
                     style={{ display: 'inline-block' }}
                 >
                     {texts[currentTextIndex]}
-                </motion.span>
+                </Motion.span>
             </AnimatePresence>
         </span>
     );

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
+import { motion as Motion, useSpring, useMotionValue } from 'framer-motion';
 import './TiltedCard.css';
 
 const TiltedCard = ({
@@ -46,7 +46,7 @@ const TiltedCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <motion.div
+      <Motion.div
         className="tilted-card-inner"
         style={{
           rotateX,
@@ -59,7 +59,7 @@ const TiltedCard = ({
           alt={altText}
           className="tilted-card-img"
         />
-      </motion.div>
+      </Motion.div>
     </div>
   );
 };
