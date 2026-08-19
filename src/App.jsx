@@ -4,13 +4,16 @@ import Magnet from './components/Magnet';
 import Ribbons from './components/Ribbons/Ribbons.jsx';
 import ClickSpark from './components/ClickSpark';
 import MagicBento from './components/MagicBento/MagicBento';
-import ScrollStack, { ScrollStackItem } from './components/ScrollStack/ScrollStack.jsx';
-import CircularGallery from './components/CircularGallery/CircularGallery.jsx';
 import Waves from './components/Waves/Waves.jsx';
 import ProfileCard from './components/ProfileCard/ProfileCard.jsx';
 
 function App() {
-    const skills = ["React", "Next.js", "JavaScript", "TypeScript", "Framer Motion", "GSAP", "WebGL", "Node.js"];
+    const skillGroups = [
+      { title: 'Backend', items: ['Python', 'FastAPI', 'APIs REST'] },
+      { title: 'Automação e DevOps', items: ['Automação', 'Linux', 'Docker', 'CI/CD'] },
+      { title: 'Operação', items: ['Observabilidade', 'Git', 'GitHub Actions'] },
+      { title: 'Frontend complementar', items: ['React', 'JavaScript', 'HTML', 'CSS'] },
+    ];
 
     const handleContactSubmit = (event) => {
       event.preventDefault();
@@ -23,14 +26,6 @@ function App() {
 
       window.location.href = `mailto:endesonmarcell@gmail.com?subject=${subject}&body=${body}`;
     };
-
-    const galleryItems = [
-      { image: '/AlunoUninassau.png', text: "Portal do Aluno/Uninassau" },
-      { image: '/Portifolio.png', text: "Projeto Portfolio" },
-      { image: '/FOTOPROJETOSOLAR.png', text: "Projeto SolAr" },
-      { image: '/Shild.png', text: "Projeto Shild" },
-      { image: '/MINER AI.png', text: "Projeto MINER AI" }
-    ];
 
     return (
         <React.Fragment>
@@ -50,37 +45,49 @@ function App() {
                 <section className="hero-section">
                     <h1>
                         Olá, eu sou Endeson Marcell, <br />
-                        <RotatingText texts={["Desenvolvedor Criativo.", "Engenheiro de UI.", "Mago do React."]} />
+                        <RotatingText texts={["Backend Python.", "Automação.", "Linux & DevOps."]} />
                     </h1>
-                    <p>Especialista em transformar ideias em experiências digitais memoráveis, interativas e performáticas.</p>
+                    <p>Desenvolvo APIs com Python e FastAPI, automações e ambientes confiáveis com Linux, Docker, integração contínua e observabilidade.</p>
                     <Magnet>
                         <a href="#projects" className="cta-button">Conheça meu trabalho</a>
                     </Magnet>
                 </section>
                 <section id="about">
                     <ProfileCard
-                        avatarUrl="/endeson-marcell.png" // Caminho corrigido
-                        miniAvatarUrl="/endeson-marcell.png" // Caminho corrigido
+                        avatarUrl="/endeson-marcell.png"
+                        miniAvatarUrl="/endeson-marcell.png"
                         name="Endeson Marcell"
-                        title="Desenvolvedor Criativo"
+                        title="Backend Python • Automação • DevOps"
                         handle="endeson.marcell"
                         onContactClick={() => { window.location.href = 'mailto:endesonmarcell@gmail.com'; }}
                     />
                 </section>
 
+                <section className="about-copy" aria-labelledby="about-title">
+                    <p className="section-kicker">Sobre</p>
+                    <h2 id="about-title">Software que funciona além da interface</h2>
+                    <p>Meu foco está no backend: APIs em Python e FastAPI, automação de rotinas e práticas de Linux/DevOps para executar, integrar e observar aplicações. Docker, CI e observabilidade fazem parte desse caminho. Frontend é uma competência complementar, usada para entregar experiências completas quando o projeto pede.</p>
+                </section>
+
                 <section id="projects">
-                    <h2>Laboratório Interativo</h2>
-                    <p style={{ marginBottom: "3rem" }}>Passe o mouse sobre os cards para ver a mágica acontecer. Cada um demonstra uma técnica diferente.</p>
+                    <p className="section-kicker">Trabalho real</p>
+                    <h2>Projetos selecionados</h2>
+                    <p style={{ marginBottom: "3rem" }}>Backend e infraestrutura em primeiro plano, com produtos web que também mostram minha atuação complementar no frontend.</p>
                     <MagicBento />
                 </section>
-                <section id="featured-projects" style={{ padding: 0, maxWidth: '100vw', height: '100vh', overflow: 'hidden', background: '#060010' }}>
-                  <CircularGallery items={galleryItems} />
-                </section>
                 <section id="skills">
-                    <h2>Principais Habilidades</h2>
-                    <div className="skills-container">
-                        {skills.map((skill, index) => (
-                            <Magnet key={index}><div className="skill-item">{skill}</div></Magnet>
+                    <p className="section-kicker">Stack</p>
+                    <h2>Principais habilidades</h2>
+                    <div className="skill-groups">
+                        {skillGroups.map((group) => (
+                          <article className="skill-group" key={group.title}>
+                            <h3>{group.title}</h3>
+                            <div className="skills-container">
+                              {group.items.map((skill) => (
+                                <Magnet key={skill}><div className="skill-item">{skill}</div></Magnet>
+                              ))}
+                            </div>
+                          </article>
                         ))}
                     </div>
                 </section>
@@ -108,4 +115,4 @@ function App() {
     );
 }
 
-export default App; 
+export default App;
