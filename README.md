@@ -1,12 +1,64 @@
-# React + Vite
+# Portfólio Criativo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-https://endesonportifolio.netlify.app/
-Currently, two official plugins are available:
+[![CI](https://github.com/endeson12/portfolio-criativo/actions/workflows/ci.yml/badge.svg)](https://github.com/endeson12/portfolio-criativo/actions/workflows/ci.yml)
+[![React](https://img.shields.io/badge/React-19-149ECA?logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Portfólio experimental criado para explorar interfaces interativas, motion design e efeitos gráficos no navegador.
 
-## Expanding the ESLint configuration
+**Aplicação publicada:** [endesonportifolio.netlify.app](https://endesonportifolio.netlify.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Prévia do portfólio](public/Portifolio.png)
+
+## O que o projeto demonstra
+
+- composição de componentes reutilizáveis em React;
+- animações com Framer Motion e GSAP;
+- rolagem suave e microinterações;
+- efeitos gráficos com OGL/WebGL;
+- galeria circular e cartões interativos;
+- layout responsivo e publicação contínua no Netlify.
+
+## Tecnologias
+
+- React 19
+- Vite 7
+- Framer Motion
+- GSAP
+- Lenis
+- OGL
+- ESLint
+- GitHub Actions
+
+## Execução local
+
+Requisitos: Node.js 20 ou superior.
+
+```bash
+git clone https://github.com/endeson12/portfolio-criativo.git
+cd portfolio-criativo
+npm ci
+npm run dev
+```
+
+A aplicação estará disponível no endereço informado pelo Vite, normalmente `http://localhost:5173`.
+
+## Verificação
+
+```bash
+npm run lint
+npm run build
+```
+
+O workflow de CI executa as verificações a cada atualização da branch principal.
+
+## Limitações atuais
+
+- o formulário prepara a mensagem no cliente de e-mail do visitante; não há armazenamento no servidor;
+- algumas experiências gráficas podem exigir mais processamento em dispositivos antigos;
+- o conteúdo dos projetos apresentados é estático.
+
+## Contato
+
+- [GitHub](https://github.com/endeson12)
+- [E-mail](mailto:endesonmarcell@gmail.com)

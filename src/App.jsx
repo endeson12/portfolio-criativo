@@ -12,6 +12,18 @@ import ProfileCard from './components/ProfileCard/ProfileCard.jsx';
 function App() {
     const skills = ["React", "Next.js", "JavaScript", "TypeScript", "Framer Motion", "GSAP", "WebGL", "Node.js"];
 
+    const handleContactSubmit = (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
+      const subject = encodeURIComponent(`Contato pelo portfólio — ${name}`);
+      const body = encodeURIComponent(`${message}\n\nNome: ${name}\nE-mail: ${email}`);
+
+      window.location.href = `mailto:endesonmarcell@gmail.com?subject=${subject}&body=${body}`;
+    };
+
     const galleryItems = [
       { image: '/AlunoUninassau.png', text: "Portal do Aluno/Uninassau" },
       { image: '/Portifolio.png', text: "Projeto Portfolio" },
@@ -75,10 +87,10 @@ function App() {
                 <section id="contact">
                     <h2>Vamos Conversar?</h2>
                     <p style={{ marginBottom: "2rem" }}>Estou disponível para novos projetos e colaborações. Me mande uma mensagem!</p>
-                    <form onSubmit={(e) => { e.preventDefault(); alert('Mensagem enviada! (simulação)'); }}>
-                        <input type="text" placeholder="Seu Nome" required />
-                        <input type="email" placeholder="Seu E-mail" required />
-                        <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
+                    <form onSubmit={handleContactSubmit}>
+                        <input name="name" type="text" placeholder="Seu Nome" required />
+                        <input name="email" type="email" placeholder="Seu E-mail" required />
+                        <textarea name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
                         <ClickSpark>
                              <Magnet><button type="submit">Enviar Mensagem</button></Magnet>
                         </ClickSpark>
@@ -88,7 +100,7 @@ function App() {
             <footer>
                 <div className="social-links">
                     <a href="https://github.com/endeson12" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://linkedin.com/in/[seu-usuario]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://endesonportifolio.netlify.app/" target="_blank" rel="noopener noreferrer">Portfólio</a>
                     <a href="mailto:endesonmarcell@gmail.com">Email</a>
                 </div>
             </footer>
