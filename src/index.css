@@ -22,7 +22,10 @@ body {
     color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    text-rendering: optimizeLegibility;
 }
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #72e5ff; outline-offset: 4px; }
 
 main {
     width: 100%;
@@ -199,7 +202,7 @@ h1 .text-rotate span, h1 .text-rotate {
 
 @media (max-width: 480px) {
   section {
-    padding: 24px 2vw;
+    padding: 32px 4vw;
     min-height: 50vh;
   }
   h1 {
@@ -217,4 +220,9 @@ h1 .text-rotate span, h1 .text-rotate {
     padding: 10px;
     font-size: 0.95rem;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }

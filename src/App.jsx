@@ -3,9 +3,10 @@ import RotatingText from './components/RotatingText';
 import Magnet from './components/Magnet';
 import Ribbons from './components/Ribbons/Ribbons.jsx';
 import ClickSpark from './components/ClickSpark';
-import MagicBento from './components/MagicBento/MagicBento';
 import Waves from './components/Waves/Waves.jsx';
 import ProfileCard from './components/ProfileCard/ProfileCard.jsx';
+import ProjectShowcase from './components/Projects/ProjectShowcase.jsx';
+import { projects } from './data/projects.js';
 
 function App() {
     const skillGroups = [
@@ -70,10 +71,13 @@ function App() {
                 </section>
 
                 <section id="projects">
-                    <p className="section-kicker">Trabalho real</p>
-                    <h2>Projetos selecionados</h2>
-                    <p style={{ marginBottom: "3rem" }}>Backend e infraestrutura em primeiro plano, com produtos web que também mostram minha atuação complementar no frontend.</p>
-                    <MagicBento />
+                    <div className="projects-heading">
+                      <div><p className="section-kicker">Selected work · 2026</p><h2>Sistemas reais, evidência visível.</h2></div>
+                      <p>Cinco projetos em backend, automação e operação. Nos trabalhos privados, somente arquitetura sanitizada e limites verificáveis.</p>
+                    </div>
+                    <div className="projects-list">
+                      {projects.map((project, index) => <ProjectShowcase project={project} featured={index === 0} key={project.slug} />)}
+                    </div>
                 </section>
                 <section id="skills">
                     <p className="section-kicker">Stack</p>
