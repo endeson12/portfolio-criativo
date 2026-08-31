@@ -62,7 +62,7 @@ function App() {
           </div>
           <div className="hero-visual" aria-label="Foto profissional de Endeson Marcell">
             <div className="portrait-glow"></div>
-            <img src="/endeson-marcell.png" alt="Endeson Marcell" width="400" height="431" fetchPriority="high" />
+            <img src="/endeson-hero.webp" alt="Endeson Marcell" width="1200" height="1500" fetchPriority="high" />
             <div className="availability"><span></span><div><small>Disponível para</small><strong>oportunidades remotas</strong></div></div>
             <div className="hero-code" aria-hidden="true"><span>API</span><span>AUTOMAÇÃO</span><span>DEVOPS</span></div>
           </div>
