@@ -6,7 +6,7 @@ export const projects = [
     solution: 'FastAPI e PostGIS recebem GeoJSON validado, preservam a origem dos lotes e executam consultas geodésicas com índices GiST.',
     evidence: 'CI pública valida 20 feições OSM e 123 bairros do IBGE; benchmark reproduzível com 100 mil pontos e plano de consulta publicado.',
     tech: ['FastAPI', 'PostGIS', 'GeoJSON', 'Docker', 'GitHub Actions'],
-    media: '/project-media/geo-intelligence.svg', mediaAlt: 'Interface cartográfica com pontos de equipamentos e painel de cobertura territorial',
+    media: '/project-media/geo-intelligence.webp', mediaAlt: 'Interface cartográfica com pontos de equipamentos e painel de cobertura territorial',
     links: [{ label: 'Abrir demo', href: 'https://endeson12.github.io/geo-intelligence-api/' }, { label: 'Ver código', href: 'https://github.com/endeson12/geo-intelligence-api' }],
   },
   {
@@ -16,7 +16,7 @@ export const projects = [
     solution: 'Pipeline de qualidade, contêiner não-root, probes, métricas Prometheus, logs JSON, idempotência e rotinas de backup/restore.',
     evidence: 'Release v0.2.2: 12 testes, 96% de cobertura, Ruff e mypy aprovados; Swagger e liveness públicos via HTTPS.',
     tech: ['FastAPI', 'Docker', 'Prometheus', 'Grafana', 'CI/CD'],
-    media: '/project-media/devops-fastapi.svg', mediaAlt: 'Painel de observabilidade de uma API com métricas, deploy e status saudáveis',
+    media: '/project-media/devops-fastapi.webp', mediaAlt: 'Painel de observabilidade de uma API com métricas, deploy e status saudáveis',
     links: [{ label: 'Abrir Swagger', href: 'https://devops-lab.76-13-234-134.sslip.io/docs' }, { label: 'Ver código', href: 'https://github.com/endeson12/devops-fastapi-lab' }],
   },
   {
@@ -26,7 +26,7 @@ export const projects = [
     solution: 'Ingestão idempotente, busca textual/híbrida, trilha de auditoria e fila de revisão com RLS deny-by-default.',
     evidence: 'Arquitetura e controles documentados publicamente; publicação e gastos permanecem sujeitos à aprovação humana.',
     tech: ['Python', 'Flask', 'Supabase', 'PostgreSQL', 'RLS'],
-    media: '/project-media/marketing-hub.svg', mediaAlt: 'Painel editorial de inteligência de marketing com fontes e hipóteses em revisão',
+    media: '/project-media/marketing-hub.webp', mediaAlt: 'Painel editorial de inteligência de marketing com fontes e hipóteses em revisão',
     links: [{ label: 'Ler case público', href: 'https://github.com/endeson12/automation-case-studies/blob/main/cases/marketing-intelligence-hub.md' }],
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     solution: 'Worker Python, adaptadores de OCR e portal Next.js organizam casos, confiança, pendências e revisão antes da confirmação.',
     evidence: 'O case público descreve a arquitetura e os limites; documentos, fornecedores, valores e credenciais não são publicados.',
     tech: ['Python', 'Next.js', 'Supabase', 'OCR', 'PostgreSQL'],
-    media: '/project-media/financial-automation.svg', mediaAlt: 'Interface de revisão de documento financeiro com campos extraídos e confiança',
+    media: '/project-media/financial-automation.webp', mediaAlt: 'Interface de revisão de documento financeiro com campos extraídos e confiança',
     links: [{ label: 'Ler case público', href: 'https://github.com/endeson12/automation-case-studies/blob/main/cases/financial-document-automation.md' }],
   },
   {
@@ -46,7 +46,7 @@ export const projects = [
     solution: 'Validação fail-closed, fingerprints SHA-256, deduplicação, fila humana e dossiê determinístico com citações.',
     evidence: 'CI cobre lint, unitários, E2E, build e auditoria do corpus sintético; não há integração com tribunais ou produção.',
     tech: ['React', 'TypeScript', 'Python', 'PostgreSQL', 'SHA-256'],
-    media: '/project-media/legal-workflow.svg', mediaAlt: 'Linha do tempo jurídica sintética conectando documentos, eventos e tarefas',
+    media: '/project-media/legal-workflow.webp', mediaAlt: 'Linha do tempo jurídica sintética conectando documentos, eventos e tarefas',
     links: [{ label: 'Ler case público', href: 'https://github.com/endeson12/automation-case-studies/blob/main/cases/traceable-legal-workflow.md' }],
   },
 ];
