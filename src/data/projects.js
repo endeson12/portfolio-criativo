@@ -1,6 +1,6 @@
 export const projects = [
   {
-    slug: 'geo-intelligence', index: '01', title: 'Geo Intelligence API', eyebrow: 'Geospatial engineering', status: 'Público · demonstrativo', tone: 'cyan',
+    slug: 'geo-intelligence', index: '01', title: 'Geo Intelligence API', eyebrow: 'Engenharia geoespacial', status: 'Público · demonstrativo', tone: 'cyan',
     summary: 'API geoespacial para responder perguntas de proximidade, cobertura radial e presença de equipamentos com dados rastreáveis.',
     problem: 'Consultas territoriais precisam de semântica espacial explícita, proveniência e resultados reproduzíveis.',
     solution: 'FastAPI e PostGIS recebem GeoJSON validado, preservam a origem dos lotes e executam consultas geodésicas com índices GiST.',
@@ -10,7 +10,7 @@ export const projects = [
     links: [{ label: 'Abrir demo', href: 'https://endeson12.github.io/geo-intelligence-api/' }, { label: 'Ver código', href: 'https://github.com/endeson12/geo-intelligence-api' }],
   },
   {
-    slug: 'devops-fastapi', index: '02', title: 'DevOps FastAPI Lab', eyebrow: 'Delivery & reliability', status: 'Público · em operação', tone: 'violet',
+    slug: 'devops-fastapi', index: '02', title: 'DevOps FastAPI Lab', eyebrow: 'Entrega e confiabilidade', status: 'Público · em operação', tone: 'violet',
     summary: 'Laboratório reproduzível de entrega, segurança, observabilidade e recuperação para uma API FastAPI.',
     problem: 'Uma API só é confiável quando build, operação, sinais e recuperação também podem ser verificados.',
     solution: 'Pipeline de qualidade, contêiner não-root, probes, métricas Prometheus, logs JSON, idempotência e rotinas de backup/restore.',
@@ -20,7 +20,7 @@ export const projects = [
     links: [{ label: 'Abrir Swagger', href: 'https://devops-lab.76-13-234-134.sslip.io/docs' }, { label: 'Ver código', href: 'https://github.com/endeson12/devops-fastapi-lab' }],
   },
   {
-    slug: 'marketing-intelligence', index: '03', title: 'Marketing Intelligence Hub', eyebrow: 'Knowledge operations', status: 'Privado · case sanitizado', tone: 'amber',
+    slug: 'marketing-intelligence', index: '03', title: 'Marketing Intelligence Hub', eyebrow: 'Operação do conhecimento', status: 'Privado · case sanitizado', tone: 'amber',
     summary: 'Hub interno que transforma fontes autorizadas em regras, hipóteses, experimentos e aprendizados pesquisáveis.',
     problem: 'Conhecimento de vídeos, documentos e campanhas tende a ficar disperso e sem histórico de revisão.',
     solution: 'Ingestão idempotente, busca textual/híbrida, trilha de auditoria e fila de revisão com RLS deny-by-default.',
@@ -30,7 +30,7 @@ export const projects = [
     links: [{ label: 'Ler case público', href: 'https://github.com/endeson12/automation-case-studies/blob/main/cases/marketing-intelligence-hub.md' }],
   },
   {
-    slug: 'financial-automation', index: '04', title: 'Financial Document Automation', eyebrow: 'Document intelligence', status: 'Privado · case sanitizado', tone: 'mint',
+    slug: 'financial-automation', index: '04', title: 'Financial Document Automation', eyebrow: 'Inteligência documental', status: 'Privado · case sanitizado', tone: 'mint',
     summary: 'Fluxo supervisionado para ingerir, classificar, extrair e revisar documentos financeiros heterogêneos.',
     problem: 'Leitura manual e formatos variados tornam a conferência lenta e aumentam o risco de campos incompletos.',
     solution: 'Worker Python, adaptadores de OCR e portal Next.js organizam casos, confiança, pendências e revisão antes da confirmação.',
@@ -40,7 +40,7 @@ export const projects = [
     links: [{ label: 'Ler case público', href: 'https://github.com/endeson12/automation-case-studies/blob/main/cases/financial-document-automation.md' }],
   },
   {
-    slug: 'legal-workflow', index: '05', title: 'Traceable Legal Workflow', eyebrow: 'Governed workflow', status: 'Privado · protótipo acadêmico', tone: 'rose',
+    slug: 'legal-workflow', index: '05', title: 'Traceable Legal Workflow', eyebrow: 'Fluxo governado', status: 'Privado · protótipo acadêmico', tone: 'rose',
     summary: 'Protótipo com dados sintéticos para ligar documentos, cronologia, tarefas e fontes em um dossiê rastreável.',
     problem: 'Fluxos fragmentados dificultam conectar fatos e documentos sem perder origem, conflitos ou pendências.',
     solution: 'Validação fail-closed, fingerprints SHA-256, deduplicação, fila humana e dossiê determinístico com citações.',
@@ -48,5 +48,15 @@ export const projects = [
     tech: ['React', 'TypeScript', 'Python', 'PostgreSQL', 'SHA-256'],
     media: '/project-media/legal-workflow.webp', mediaAlt: 'Linha do tempo jurídica sintética conectando documentos, eventos e tarefas',
     links: [{ label: 'Ler case público', href: 'https://github.com/endeson12/automation-case-studies/blob/main/cases/traceable-legal-workflow.md' }],
+  },
+  {
+    slug: 'projeto-solar', index: '06', title: 'Projeto SolAr', eyebrow: 'Produto e impacto', status: 'Público · demonstrativo', tone: 'amber',
+    summary: 'MVP responsivo para apresentar a jornada de adoção e simulação de energia solar de forma acessível.',
+    problem: 'Informações sobre energia solar costumam chegar fragmentadas e difíceis de comparar para quem está começando.',
+    solution: 'Experiência React e TypeScript organizada em componentes, com narrativa simples, interface mobile e simulação orientativa.',
+    evidence: 'Aplicação e código estão publicados via GitHub Pages, permitindo verificar a experiência e a implementação.',
+    tech: ['React', 'TypeScript', 'Vite', 'GitHub Pages'],
+    media: '/project-media/solar.webp', mediaAlt: 'Interface pública e responsiva do Projeto SolAr',
+    links: [{ label: 'Abrir aplicação', href: 'https://endeson12.github.io/projeto-solar-liga-jovem/' }, { label: 'Ver código', href: 'https://github.com/endeson12/projeto-solar-liga-jovem' }],
   },
 ];
