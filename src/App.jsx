@@ -55,7 +55,7 @@ function App() {
               <a className="text-link" href="/curriculo-endeson-marcell.pdf" download>Baixar currículo <span>↓</span></a>
             </div>
             <ul className="hero-facts" aria-label="Resumo de competências">
-              <li><strong>6</strong><span>projetos apresentados</span></li>
+              <li><strong>7</strong><span>projetos apresentados</span></li>
               <li><strong>Python · React</strong><span>backend e interfaces</span></li>
               <li><strong>Linux · Docker</strong><span>entrega e operação</span></li>
             </ul>
@@ -70,7 +70,7 @@ function App() {
 
         <section className="intro" id="sobre">
           <div><p className="section-label">Sobre</p><h2>Tecnologia ligada ao problema real.</h2></div>
-          <p>Sou desenvolvedor e estudante de Análise e Desenvolvimento de Sistemas. Construo soluções completas para rotinas administrativas e empresariais: entendo a demanda, estruturo requisitos, desenvolvo, testo, publico e acompanho o uso. IA acelera o processo; engenharia, segurança e validação sustentam o resultado.</p>
+          <p>Sou desenvolvedor formado em Análise e Desenvolvimento de Sistemas. Construo soluções completas para rotinas administrativas e empresariais: entendo a demanda, estruturo requisitos, desenvolvo, testo, publico e acompanho o uso. IA acelera o processo; engenharia, segurança e validação sustentam o resultado.</p>
         </section>
 
         <section className="projects-section" id="projetos">
@@ -105,7 +105,7 @@ function App() {
           <div className="section-heading compact"><div><p className="section-label">Experiência e formação</p><h2>Construção com contexto de operação.</h2></div></div>
           <div className="timeline">
             <article><span className="timeline-dot"></span><div className="timeline-date">OUT 2024 — ATUAL</div><h3>Especialista em TI</h3><h4>Mais Saúde Distribuidora</h4><p>Apoio à operação, usuários, infraestrutura e dados. Transformação de necessidades administrativas em soluções digitais, automações e melhorias sustentáveis.</p></article>
-            <article><span className="timeline-dot"></span><div className="timeline-date">EM ANDAMENTO</div><h3>Análise e Desenvolvimento de Sistemas</h3><h4>UNINASSAU</h4><p>Formação superior focada em desenvolvimento, arquitetura, dados e engenharia de software.</p></article>
+            <article><span className="timeline-dot"></span><div className="timeline-date">CONCLUÍDO</div><h3>Análise e Desenvolvimento de Sistemas</h3><h4>UNINASSAU</h4><p>Formação superior focada em desenvolvimento, arquitetura, dados e engenharia de software.</p></article>
             <article><span className="timeline-dot"></span><div className="timeline-date">CONCLUÍDO</div><h3>Tecnologia da Informação</h3><h4>SENAC</h4><p>Formação técnica que sustenta a atuação em sistemas, infraestrutura e suporte.</p></article>
           </div>
         </section>
